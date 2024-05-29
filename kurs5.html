@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Kurs CTkintera</title>
+    <link rel="icon" type="image/png" href="Assets/Logos/python.png">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+    <div id="logo">Okienkowy python</div>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#intro">Wprowadzenie</a></li>
+            <li><a href="#packs">Tkinter i Pakiety</a></li>
+            <li><a href="#authors">O Autorach</a></li>
+            <li><a href="#files">Materiały Pomocnicze</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <div class="section" id="intro" style="margin-bottom: 50px;">
+            Wielu z nas zainteresowała się programowaniem, przez gry komputerowe.
+            Każdy chciał nauczyć się programowania, by zaprogramować osobiście swoją grę.
+            Uczyłeś się bardzo długo i napisałeś wiele fajnych programów. Pomyślałeś - "Jestem już gotowy!"...
+            I zderzyłeś się z rzeczywistością, aby utworzyć pojedyncze okno musisz pisać jakieś dziwne chieroglify.
+            Na pomoc Ci, ruszyły biblioteki graficzne! W tym artykule zapoznam Cię z jedną z nich.
+        </div>
+
+
+        <div class="section" id="packs">
+            Sama biblioteka TKinter ma swojego brata - Customtkinter,
+            który jest bardzo łatwo implementowany do twojego programu. Żeby zacząć tworzenie aplikacji
+            okienkowych musimy najpierw zaistalować kilka bibliotek. Wprowadź następujące polecenia do terminalu VS
+            Code.
+
+            <div class="spis">
+                <ul>
+                    <li> <a style="color: rgb(18, 141, 18);">tkinter</a> -> pip install tk</li>
+                    <!-- <li> <a style="color: rgb(18, 141, 18);">pip</a> -> pip install pip</li> -->
+                    <li> <a style="color: rgb(18, 141, 18);">customtkinter</a> -> pip install customtkinter</li>
+                </ul>
+            </div>
+
+            <!-- <div class="pic"><img style="width: 50%;" src="Assets/screen1.png"></div> -->
+            <div class="code-frame">
+                <code>
+                        import customtkinter
+                    </code>
+            </div>
+
+            <br>Od teraz wszystkie klasy i funkcje biblioteki będą działać.
+        </div>
+
+        <div class="section">
+            Zaczynamy tworzyć okno. Tworzymy obiekt <a style="color: rgb(14, 187, 14);">customtkinter.CTk()</a>.
+            Określamy wymiary okna funkcją <a style="color: yellow;">geometry()</a> i nazwę funkcją
+            <a style="color: yellow;">title()</a> <br>
+            Na koniec dodaj <a style="color: yellow;">mainloop()</a>, by okno się pokazało. Nie zapomnij o tym!
+
+
+        </div>
+        <div class="pic"><img src="Assets/screen2.png"></div>
+
+
+        <div class="section">
+            Teraz możesz stylizować, dodając obiekty.
+            Wszystko co chcesz umieścić w oknie, umieść przed <a style="color: yellow;">mainloop()</a> <br>
+            Dodaj zmienną <a style="color: rgb(14, 187, 14);">customtkinter.CTkLabel()</a>.
+            Najeżdżając kursorem lub klikająć "Go to the definition" możesz sprawdzić jakie właściwości ma poszczególna
+            klasa z biblioteki. <br>
+            Gdy utworzysz obiekt, użyj funkcji <a style="color: yellow;">pack()</a> lub <a
+                style="color: yellow;">place()</a>, by go wywołać.
+
+            <div class="pic"><img src="Assets/screen3.png"></div>
+        </div>
+
+
+        <div class="section">
+            Jeśli planujesz napisać jakąś aplikację lub grę, w której będą wyświetlane różne okna, powinieneś tworzyć
+            "ramki". <br>
+            Ramki pozwalają na łatwiejsze zarządzanie i zmianę zawartości okna. (Patrz film "zmiana ramek").<br>
+            Utwórz obiekt w klasie <a style="color: rgb(14, 187, 14);">customtkinter.CTkFrame()</a> i ustaw parametr
+            <a style="color: rgb(37, 144, 231);">master</a> (obiekt wyżej w herarchi / warstwa pod obecną warstwą)
+            na warstwę główną, tutaj określone jako <a style="color: rgb(37, 144, 231);">okno</a>. <br>
+            Później, gdy tworzysz nowe obiekty, nie zapomnij ustawić <a style="color: rgb(37, 144, 231);">master</a> na
+            wyższy obiekt
+            w hierarchi, by bezbłednie się wyświetlały lub nachodziły.
+
+            <div class="ramka">
+                <dt>
+                    Warstwa główna
+                <dt>|-Ramka
+                <dt>
+                <dd>|-Obiekt1</dd>
+                <dd>|-obiekt2</dd>
+                </dt>
+                </dt>
+                </dt>
+            </div>
+            <div class="pic"><img src="Assets/screen4.png"></div>
+        </div>
+
+
+        <div class="section">
+            Aby usunąć warstwę lub jakikolwiek gadżet, będziesz musiał wykorzystać <a
+                style="color: rgb(14, 187, 14);">customtkinter.CTkButton()</a>
+            i metodę <a style="color: rgb(37, 144, 231);">command</a>. Użycie <a
+                style="color: rgb(37, 144, 231);">lambda:</a> może zapobiec przed
+            nie chcianym uruchomieniem funkcji wraz ze startem programu.
+            <div class="pic"><img src="Assets/screen5.png"></div>
+            <div class="pic"><iframe src="Assets/Record1.mp4" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+
+
+        <div class="section">
+            Przekształćmy teraz kod na oddzielne funkcje. Każda funkcja odpowiada za 1 okno.
+            <div class="pic"><img src="Assets/screen6.png"></div>
+            Aby można było wywoływać okna niezależnie,
+            musimy utworzyć jeszcze jedną funkcję odpowiadającą za niszczenie i tworzenie nowego. Funkcja <a
+                style="color: yellow;">Nowe()</a> pobiera 2 argumenty,
+            pierwszy - ramka obecnego okna do zniszczenia i drugi - funkcja nowego okna do utworzenia.
+            <div class="pic"><iframe src="Assets/record2.mp4" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+
+
+        <div class="section" id="authors">
+            <div class="header">Autorzy projektu</div>
+            <div class="spis">
+                <ul>
+                    <li>Jan Pietrzak - autor strony</li>
+                    <li>Fabian Szaniawski - autor tekstu</li>
+                    <li>Dawid Paluch - prezenter</li>
+                    <li>Alan Matusiak - prezenter</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="section" id="files">
+            Jeśli zainteresowałeś się tematem, sprawdź dokumentacje widżetów, aby poszerzyć swoją wiedzę.
+            <a class="link" href="https://customtkinter.tomschimansky.com/documentation/widgets">Dokumentacje
+                Widżetów</a><br><br>
+            Pliki kursu:
+            <a class="link" href="/Filesx666/Dokumenty/Informatyka/Projekt/kursCode.py">Python</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
