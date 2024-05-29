@@ -60,43 +60,6 @@ body
     margin-right: auto;
 }
 
-/* nav
-{
-    background-color: rgb(37, 103, 160);
-    text-align: center;
-}
-
-.menu
-{
-    list-style-type: none;
-    padding: 10px;
-    font-size: var(--nav-size);
-    min-height: 40px;
-    line-height: 200%;
-}
-
-.menu > li
-{
-    display: inline-block;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-right: 1px dashed aliceblue;
-    
-}
-.menu > li:first-child
-{
-    border-left: 1px dashed aliceblue;
-}
-.menu a
-{
-    color: aliceblue;
-    text-decoration: none;
-}
-.menu a:hover
-{
-    text-decoration: underline;
-} */
-
 .section {
     color: aliceblue;
     font-size: var(--font-size);
