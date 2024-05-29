@@ -141,13 +141,6 @@ iframe
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
-.code-source
-{
-    overflow-x: auto;
-    padding: 10px;
-    color: white;
-    text-align: left;
-}
 pre
 {
     margin: 0;
@@ -156,7 +149,10 @@ pre
 code
 {
     display: block;
+    overflow-x: auto;
     padding: 10px;
+    color: white;
+    text-align: left;
 }
 
 /* EDITOR COLORS */
