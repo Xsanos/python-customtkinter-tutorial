@@ -1,1 +1,1 @@
-Strona jest poradnikiem jak zacząć przygodę z custotkinterem
+Strona jest poradnikiem jak zacząć przygodę z biblioteką graficzną - customtkinterem
