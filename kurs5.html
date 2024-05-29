@@ -119,12 +119,12 @@ okno.mainloop()
                 </code></pre>
             </div>
 <!-- CODE FRAME --> 
-            <div class="pic"><iframe src="https://github.com/Xsanos/python-customtkinter-tutorial/blob/main/Assets/Record1.mp4" loading="lazy" allowfullscreen></iframe></div>
+            <!-- <div class="pic"><iframe src="https://github.com/Xsanos/python-customtkinter-tutorial/blob/main/Assets/Record1.mp4" loading="lazy" allowfullscreen></iframe></div> -->
         </div>
 
 
         <div class="section">
-            Przekształćmy teraz kod na oddzielne funkcje. Każda funkcja odpowiada za 1 okno.
+            Przekształćmy teraz kod na oddzielne funkcje. Każda funkcja odpowiada za 1 okno. (To jest poglądowy kod)
             <!-- <div class="pic"><img src="Assets/screen6.png"></div> -->
 <!-- CODE FRAME -->
             <div class="code-frame">
@@ -163,20 +163,38 @@ okno = customtkinter.CTk()
 okno.geometry("360x240")
 okno.title("okno")
 
+def Nowe(okno_poprzednie, okno_nowe):
+    okno_poprzednie.destroy()
+    okno_nowe
+
 def Okno_Startowe():
     warstwa = customtkinter.CTkFrame(master=okno)
     warstwa.pack()
 
-    zawartosc = customtkinter.CTkLabel(master=warstwa, height=200, width=200, text="Zawartość", text_color="black", bg_color="white")
+    zawartosc = customtkinter.CTkLabel(master=warstwa, height=200, width=200, text="Okno Startowe", text_color="black", bg_color="white")
     zawartosc.pack()
+
+    przycisk = customtkinter.CTkButton(master=warstwa, width=200, height=50, text="Przejdź do Okna 1", command=lambda:Nowe(warstwa, Okno_1()))
+    przycisk.place(relx=0.5, rely=0.7, anchor=customtkinter.CENTER)    
+
+def Okno_1():
+    warstwa = customtkinter.CTkFrame(master=okno)
+    warstwa.pack()
+
+    zawartosc = customtkinter.CTkLabel(master=warstwa, height=200, width=200, text="Okno 1", text_color="black", bg_color="white")
+    zawartosc.pack()
+
+    przycisk = customtkinter.CTkButton(master=warstwa, width=200, height=50, text="Wróć", command=lambda:Nowe(warstwa, Okno_Startowe()))
+    przycisk.place(relx=0.5, rely=0.7, anchor=customtkinter.CENTER)    
+
 
 Okno_Startowe()
 
-okno.mainloop()                    
+okno.mainloop()                 
                 </code></pre>
             </div>
 <!-- CODE FRAME --> 
-            <div class="pic"><iframe src="https://raw.githack.com/Xsanos/python-customtkinter-tutorial/main/Assets/Record2.mp4" loading="lazy" allowfullscreen></iframe></div>
+            <!-- <div class="pic"><iframe src="https://raw.githack.com/Xsanos/python-customtkinter-tutorial/main/Assets/Record2.mp4" loading="lazy" allowfullscreen></iframe></div> -->
         </div>
 
         <div class="section" id="files">
