@@ -2,20 +2,21 @@
     --width:1720px;
     --pic-width:1320px;
     --font-size:22px;
-    --logo-size:52px;
-    --nav-size: 18px;
+    --logo-size:58px;
+    --nav-size: 20px;
+    --code-font-size: 18px;
 }
 @media (max-width: 1000px) {
 :root
     {
     --width:900px;
     --pic-width:800px;
-    --font-size:26px;
-    --logo-size:80px;
+    --font-size:36px;
+    --logo-size:82px;
     --nav-size: 34px;
+    --code-font-size: 26px;
     }
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -42,8 +43,8 @@ body
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 200px;
 }
 
 
@@ -59,7 +60,7 @@ body
     margin-right: auto;
 }
 
-nav
+/* nav
 {
     background-color: rgb(37, 103, 160);
     text-align: center;
@@ -93,16 +94,15 @@ nav
 }
 .menu a:hover
 {
-    /* color: rgb(39, 42, 73); */
     text-decoration: underline;
-}
+} */
 
-.section
-{
+.section {
     color: aliceblue;
     font-size: var(--font-size);
     text-align: center;
     padding: 15px;
+    margin: 0 auto;
     margin-bottom: 50px;
 }
 
@@ -121,7 +121,7 @@ iframe
 {
     border: none;   
     width: var(--pic-width);
-    height: calc(var(--pic-width)*0.5625);
+    height: calc(var(--pic-width) * 0.5625);
 }
 
 .ramka
@@ -154,15 +154,50 @@ iframe
 }
 .header 
 {
-    font-size: calc(var(--font-size)+10px);
+    font-size: calc(var(--font-size) + 10px);
     font-weight: 600;
 }
-.code-frame
+.code-frame 
 {
+    background-color: rgb(0, 0, 0);
     border: 1px solid white;
     border-radius: 5px;
-    padding: 10px;
-    background-color: rgb(39, 37, 37);
     font-family: monospace;
-    overflo: auto;
+    width: 90%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the frame */
+    font-size: var(--code-font-size);
 }
+.code-frame-title 
+{
+    background-color: rgb(39, 37, 37);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    margin: 0;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.code-source
+{
+    overflow-x: auto;
+    padding: 10px;
+    color: white;
+    text-align: left;
+}
+pre
+{
+    margin: 0;
+    padding: 0;
+}
+code
+{
+    display: block;
+    padding: 10px;
+}
+
+/* EDITOR COLORS */
+.purple {color: rgb(173, 64, 173);} /* Purpurowy */
+.blue {color: rgb(37, 144, 231);} /* Niebieski */
+.green {color: rgb(32, 179, 32);} /* Zielony */
+.yellow {color: rgb(255, 255, 0);} /* Żółty */
